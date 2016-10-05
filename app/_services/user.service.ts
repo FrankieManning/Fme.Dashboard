@@ -8,6 +8,7 @@ import { User } from '../_models/index';
 
 @Injectable()
 export class UserService {
+    private userUrl : string = "/api/users"; //'http://localhost:55216/api/values'
     private token: string;
 
     constructor(
@@ -21,7 +22,7 @@ export class UserService {
         let options = new RequestOptions({ headers: headers });
 
         // get users from api
-        return this.http.get('/api/users', options)
+        return this.http.get(this.userUrl, options)
             .map((response: Response) => response.json());
     }
 }

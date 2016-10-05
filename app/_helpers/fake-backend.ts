@@ -20,7 +20,7 @@ export let fakeBackendProvider = {
                     // check user credentials and return fake jwt token if valid
                     if (params.username === testUser.username && params.password === testUser.password) {
                         connection.mockRespond(new Response(
-                            new ResponseOptions({ status: 200, body: { token: 'fake-jwt-token' } })
+                            new ResponseOptions({ status: 200, body: { access_token: 'fake-jwt-token' } })
                         ));
                     } else {
                         connection.mockRespond(new Response(
